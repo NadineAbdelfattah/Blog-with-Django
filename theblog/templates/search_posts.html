@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} {{ post.title_tag }} {% endblock %}
+{% block content %}
+
+<center>
+    {% if searched %}
+        <h3>You searched for: {{ searched }} </h3>
+    <br>
+    {% for post in posts %}
+        {{ post }}-
+    {{ post.title }}-
+    {{ post.title_tag }}-
+    {{ post.author }}-
+    {{ post.body }}-
+    {{ post.post_date }}<br>
+    {% endfor %}
+    {% else %}
+        <h3>Hey! You forgot to search for a post</h3>
+    {% endif %}
+</center>
+{% endblock %}
